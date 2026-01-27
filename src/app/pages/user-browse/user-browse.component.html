@@ -1,0 +1,56 @@
+<div class="worker">
+            <h1>Сотрудник "{{name}}"</h1>
+            <div>
+                <p>Мои заявки</p>
+                <p>Активы</p>
+            </div>            
+        </div>
+        <div class="info">
+                <div class="table">
+                    <div class="head">
+                    <select name="kind" id="">
+                        <option value="none">[Выберите вид]</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                    </select>
+                    <button>Сохранить вид</button>
+                    <button>Сортировка</button>
+                    <button>Фильтрация</button>
+                    <button>Просмотреть архив</button>
+                    <button>Обновить список</button>
+                    </div>
+                    <table>
+                    <thead>
+                        <tr>
+                        <th>Название</th>
+                        <th>Статус</th>
+                        <th>Дата создания</th>
+                        <th>Владелец</th>
+                        <th>Инвертарный номер</th>
+                        <th>Тип объекта</th>
+                        <th>Серийный номер</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                        <tr >
+                            <th>Название</th>
+                        <th>Статус</th>
+                        <th>Дата создания</th>
+                        <th>Владелец</th>
+                        <th>Инвертарный номер</th>
+                        <th>Тип объекта</th>
+                        <th>Серийный номер</th>
+                            <!-- <th v-on:click="viewActive(item.name)">{{item.name}}</th>
+                            <th>{{item.status}}</th>
+                            <th>{{item.date_create}}</th>
+                            <th v-on:click="viewUser(item.owner)">{{item.owner}}</th>
+                            <th>{{item.owner}}</th>
+                            <th>{{item.inventory_number}}</th>
+                            <th>{{item.type_object}}</th>
+                            <th>{{item.serial_number}}</th> -->
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
