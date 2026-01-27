@@ -14,7 +14,7 @@ import { NgIf } from '@angular/common';
 export class HeaderComponent {
   constructor(public src: DataService){}
   public folder = 'Проект разработан группой РИЗ-330916у'
-  public user = 'Фамилия Имя Отчество'
+  public user = 'Фамилия Имя'
   to_users(){
     return alert("Не работает")
   }
