@@ -9,4 +9,19 @@ import { Component } from '@angular/core';
 })
 export class UserBrowseComponent {
 public name = 'Фамилия Имя Отчество'
+  save_kid(){
+    return alert("Не работает")
+  }
+  sorting(){
+    return alert("Не работает")
+  }
+  filtr(){
+    return alert("Не работает")
+  }
+  look_archive(){
+    return alert("Не работает")
+  }
+  reload_list(){
+    return alert("Не работает")
+  }
 }
