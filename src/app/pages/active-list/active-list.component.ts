@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-active-list',
@@ -9,4 +10,10 @@ import { Component } from '@angular/core';
 })
 export class ActiveListComponent {
 
+  public activites_list = {}
+  constructor(public src:DataService){}
+  async ngOnInit(){
+    //Получение списка всех активов
+    this.activites_list = this.src.send_message_get("/get_all_activites")
+  }
 }
