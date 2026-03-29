@@ -1,1 +1,51 @@
-<p>active works!</p>
+<div class="worker">
+            <h1>Актив Такой-то</h1>
+            <div>
+                <p>Параметры объекта</p>
+                <p class="po">Программное обеспечение</p>
+            </div>            
+        </div>
+    <div class="info">
+        <div class="table">
+            <h3>Список вложенного ПО</h3>
+            <div class="head">
+            <select name="kind" id="">
+                <option value="none">[Выберите вид]</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+            </select>
+            <button>Сохранить вид</button>
+            <button>Сортировка</button>
+            <button>Фильтрация</button>
+            <button>Просмотреть архив</button>
+            <button (click)="reload_list()">Обновить список</button>
+            </div>
+            <table>
+            <thead>
+                <tr>
+                    <th width="5%"><input type="checkbox" name="" id=""></th>
+                    <th width="60%">Название</th>
+                    <th>Владелец</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th><input type="checkbox" name="" id=""></th>
+                    <th >Название</th>
+                    <th>Панфилова Ангелина Олеговна</th>
+                </tr>
+                <tr *ngFor="let item of activites_list">
+                    <th >{{item.name}}</th>
+                    <th>{{item.status}}</th>
+                    <th>{{item.date_create}}</th>
+                    <th>{{item.owner}}</th>
+                    <th>{{item.owner}}</th>
+                    <th>{{item.inventory_number}}</th>
+                    <th>{{item.type_object}}</th>
+                    <th>{{item.serial_number}}</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

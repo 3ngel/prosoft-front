@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import {Md5} from 'ts-md5/dist/md5';
+// import {Md5} from 'ts-md5/dist/md5';
+import { Md5 } from 'ts-md5';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent {
   authorization(){
     //Вычисляем хэш от пароля
     let password_hash = this.md5.appendStr(this.password).end();
+    // console.log(password_hash)
     //Тело для запроса авторизации пользователя
     let body ={
       login:this.login,
