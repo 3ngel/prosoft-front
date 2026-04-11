@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-active',
@@ -11,10 +12,13 @@ import { DataService } from '../../services/data.service';
 })
 export class ActiveComponent {
   public activites_list = {} as any
-    constructor(public src:DataService){}
+    constructor(public src:DataService, public router:Router){}
     
     //ПЕРЕДЕЛАТЬ МЕТОД НА ПОСТ
     async ngOnInit(){
+      if (this.src.authorized==false){
+        this.router.navigate(['/login'])
+      }
       //Получение списка всех активов
       this.activites_list = this.src.send_message_get("/get_all_activites")
     }

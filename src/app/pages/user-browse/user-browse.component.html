@@ -32,25 +32,17 @@
                         <th>Серийный номер</th>
                         </tr>
                     </thead>
-                        <tbody>
-                        <tr >
-                            <th>Название</th>
-                        <th>Статус</th>
-                        <th>Дата создания</th>
-                        <th>Владелец</th>
-                        <th>Инвертарный номер</th>
-                        <th>Тип объекта</th>
-                        <th>Серийный номер</th>
-                            <!-- <th v-on:click="viewActive(item.name)">{{item.name}}</th>
+                    <tbody>
+                        <tr *ngFor="let item of activites">
+                            <th (click)="viewActive(item.name)">{{item.name}}</th>
                             <th>{{item.status}}</th>
                             <th>{{item.date_create}}</th>
-                            <th v-on:click="viewUser(item.owner)">{{item.owner}}</th>
-                            <th>{{item.owner}}</th>
+                            <th routerLink="['/user-browse',item.owner]">{{item.owner}}</th>
                             <th>{{item.inventory_number}}</th>
                             <th>{{item.type_object}}</th>
-                            <th>{{item.serial_number}}</th> -->
+                            <th>{{item.serial_number}}</th>
                         </tr>
-                        </tbody>
+                    </tbody>
                     </table>
                 </div>
         </div>

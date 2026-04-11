@@ -10,6 +10,6 @@ export const routes: Routes = [
     {path:'', component: LoginComponent},
     {path:'active', component:ActiveComponent},
     {path:'active-list', component:ActiveListComponent},
-    {path:'user-browse', component: UserBrowseComponent},
+    {path:'user-browse/:name', component: UserBrowseComponent},
     {path:'users', component: UsersComponent}
 ];

@@ -1,9 +1,20 @@
 export interface Active {
+  date_create: string,
+  inventory_number: string,
   name: string,
-  status:string,
-  date_create:string,
-  owner:string,
-  inventory_number:string,
-  type_object: string,
-  serial_number:string
+  owner: string,
+  serial_number: string,
+  status: string,
+  type_object: string
+}
+export interface Active_list{
+  activites:[Active]
+}
+export interface Authorization_answer{
+  error?:string,
+  user?:string
+  user_id?:string
+}
+export interface User_browse{
+  assets:[Active]
 }

@@ -15,7 +15,7 @@ import { Router, RouterLink } from "@angular/router";
 export class HeaderComponent {
   constructor(public src: DataService, private router: Router){}
   public folder = 'Проект разработан группой РИЗ-330916у'
-  public user = 'Фамилия Имя'
+  public user = this.src.fio
   to_users(){
     this.router.navigate(['/users'])
   }
@@ -23,6 +23,8 @@ export class HeaderComponent {
     this.router.navigate(['/active-list'])
   }
   exit(){
+    this.src.authorized=false
+    this.src.removeCookie
     this.router.navigate(['/login'])
   }
 }
