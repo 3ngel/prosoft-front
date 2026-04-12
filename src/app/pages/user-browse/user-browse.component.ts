@@ -23,6 +23,10 @@ export class UserBrowseComponent {
     if (this.src.authorized==false){
       this.router.navigate(['/login'])
     }
+    let username=this.src.getCookie("username")
+    if(username==undefined){
+      this.router.navigate(['/login'])
+    }
     this.reload_list();
   }
   async getAllTypeObjects(){

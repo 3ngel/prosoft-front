@@ -19,6 +19,10 @@ export class ActiveComponent {
       if (this.src.authorized==false){
         this.router.navigate(['/login'])
       }
+      let username=this.src.getCookie("username")
+      if(username==undefined){
+        this.router.navigate(['/login'])
+      }
       //Получение списка всех активов
       this.activites_list = this.src.send_message_get("/get_all_activites")
     }

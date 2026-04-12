@@ -22,8 +22,9 @@ export class ActiveListComponent {
     //   this.router.navigate(['/login'])
     // }
     this.src.authorized=true
-    if (this.src.getCookie('username')){
-      this.src.fio=this.src.getCookie('username')
+    let username=this.src.getCookie("username")
+    if(username==undefined){
+      this.router.navigate(['/login'])
     }
     this.getAllTypeObjects();
     //Получение списка всех активов

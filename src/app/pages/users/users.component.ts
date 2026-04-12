@@ -20,6 +20,10 @@ export class UsersComponent {
       if (this.src.authorized==false){
         this.router.navigate(['/login'])
       }
+      let username=this.src.getCookie("username")
+      if(username==undefined){
+        this.router.navigate(['/login'])
+      }
     }
     save_kid(){
     return alert("Не работает")

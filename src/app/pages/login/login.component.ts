@@ -26,6 +26,7 @@ export class LoginComponent {
     if(username!=undefined){
       this.router.navigate(['/active-list'])
     }
+    
   }
 
   //Метод авторизации
