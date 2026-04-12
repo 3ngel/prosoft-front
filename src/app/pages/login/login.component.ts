@@ -22,8 +22,6 @@ export class LoginComponent {
     if (this.src.authorized==true){
       this.router.navigate(['/active-list'])
     }
-    // this.login=this.password="angelina"
-    // this.authorization()
     let username=this.src.getCookie("username")
     if(username!=undefined){
       this.router.navigate(['/active-list'])
