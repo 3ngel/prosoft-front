@@ -14,7 +14,6 @@ export class DataService {
 
   async send_message_post(path:string, body:{}){
     //Отправка запроса
-    console.log("Отправка запроса")
     let result:any
     let response = await fetch(this.api_url+path,{
       method: 'POST',
@@ -34,7 +33,6 @@ export class DataService {
 
   async send_message_get(path:string,){
     //Отправка запроса
-    console.log("Отправка запроса")
     let result:any;
     const myHeaders = new Headers();
     let cookie = document.cookie
@@ -74,9 +72,9 @@ export class DataService {
       }
     }
   }
-  document.cookie = attr.join("; ")
-  return (name_value);
-};
+    document.cookie = attr.join("; ")
+    return (name_value);
+  };
 
   getCookie(key:string){
     let cookies = document.cookie.split("; ");

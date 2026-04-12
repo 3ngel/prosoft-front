@@ -18,3 +18,6 @@ export interface Authorization_answer{
 export interface User_browse{
   assets:[Active]
 }
+export interface Type_Objects{
+  type_object:[string]
+}

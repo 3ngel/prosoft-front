@@ -6,7 +6,8 @@
     background-color: var(--dark-blue);
     color: white;
     height: 11vh;
-    width: 100%;
+    width: 98.2vw;
     display: grid;
-    grid-template-columns:repeat(2,15vw)
+    grid-template-columns:repeat(3,15vw);
+    padding: 1vh 0 0 1vw;
 }

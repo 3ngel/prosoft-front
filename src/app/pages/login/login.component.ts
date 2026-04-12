@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../services/data.service';
-// import {Md5} from 'ts-md5/dist/md5';
 import { Md5 } from 'ts-md5';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -36,7 +35,6 @@ export class LoginComponent {
     //Вычисляем хэш от пароля
     let password_hash = {}
     password_hash = this.md5.appendStr(this.password).end();
-    // let password_hash = this.password
     //Тело для запроса авторизации пользователя
     let body ={
       login:this.login,
@@ -48,13 +46,10 @@ export class LoginComponent {
     if (result.user){
       this.src.authorized=true
       this.src.fio = result.user
-      this.src.setCookie("user_id", result.user_id,1,{})
-      this.src.setCookie("username",result.user,1, {})      
       this.router.navigate(['/active-list'])
     }
     else{
       alert(result.error)
     }
-    // return alert("Не работает")
   }
 }

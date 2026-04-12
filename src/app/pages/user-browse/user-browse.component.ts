@@ -15,6 +15,7 @@ export class UserBrowseComponent {
   public name = 'Фамилия Имя Отчество'
   public subscription:any
   public activites = [{} as Active]
+  type_objects = []
   constructor(public src:DataService, public router: Router, private acroute:ActivatedRoute){
     this.subscription = this.acroute.params.subscribe(params=>this.name=params['name'])
   }
@@ -23,6 +24,12 @@ export class UserBrowseComponent {
       this.router.navigate(['/login'])
     }
     this.reload_list();
+  }
+  async getAllTypeObjects(){
+    let result = {} as any;
+    result = await this.src.send_message_get("/get_all_type_object")
+    this.type_objects = result.type_object
+    console.log(this.type_objects)
   }
   save_kid(){
     return alert("Не работает")
@@ -36,6 +43,7 @@ export class UserBrowseComponent {
   look_archive(){
     return alert("Не работает")
   }
+  
   reload_list(){
     // let body = {
     //   owner:this.name

@@ -27,4 +27,9 @@ export class HeaderComponent {
     this.src.removeCookie
     this.router.navigate(['/login'])
   }
+  getName(){
+    let cookie = {} as any
+    cookie = this.src.getCookie('username')
+    this.user = cookie.username
+  }
 }

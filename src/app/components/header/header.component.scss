@@ -24,6 +24,12 @@
     }
 }
 
+@media only screen and (max-width:1200px){
+    .header{
+        grid-template-columns: 1fr 2fr 2fr 9fr 2fr 2fr;
+    }
+}
+
 // .info{
 //     height: 89vh;
 //     width: 80%;

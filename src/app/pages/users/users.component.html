@@ -1,1 +1,48 @@
-<p>users works!</p>
+<div class="worker">
+            <!-- <h1>Сотрудники </h1> -->
+            <!-- <div>
+                <p>Мои заявки</p>
+                <p>Активы</p>
+            </div>             -->
+        </div>
+        <div class="info">
+                <div class="table">
+                    <div class="head">
+                    <select name="kind" id="">
+                        <option value="none">[Выберите вид]</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                    </select>
+                    <!-- <button (click)="save_kid()">Сохранить вид</button> -->
+                    <button (click)="sorting()">Сортировка</button>
+                    <button (click)="filtr()">Фильтрация</button>
+                    <!-- <button (click)="look_archive()">Просмотреть архив</button> -->
+                    <button (click)="reload_list()">Обновить список</button>
+                    </div>
+                    <table>
+                    <thead>
+                        <tr>
+                        <th>Фамилия имя отчество</th>
+                        <!-- <th>Статус</th> -->
+                        <th>Дата создания</th>
+                        <!-- <th>Владелец</th> -->
+                        <!-- <th>Инвертарный номер</th>
+                        <th>Тип объекта</th>
+                        <th>Серийный номер</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of activites">
+                            <th (click)="viewActive(item.name)">{{item.name}}</th>
+                            <!-- <th>{{item.status}}</th> -->
+                            <th>{{item.date_create}}</th>
+                            <!-- <th routerLink="['/user-browse',item.owner]">{{item.owner}}</th> -->
+                            <!-- <th>{{item.inventory_number}}</th>
+                            <th>{{item.type_object}}</th>
+                            <th>{{item.serial_number}}</th> -->
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
+        </div>

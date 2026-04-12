@@ -3,9 +3,7 @@
             <div class="head">
               <select name="kind" id="">
                 <option value="none">[Выберите вид]</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">4</option>
+                <option [value]="item" *ngFor="let item of type_objects">{{item}}</option>
               </select>
               <button>Сохранить вид</button>
               <button>Сортировка</button>
