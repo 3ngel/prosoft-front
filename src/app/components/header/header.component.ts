@@ -15,7 +15,10 @@ import { Router, RouterLink } from "@angular/router";
 export class HeaderComponent {
   constructor(public src: DataService, private router: Router){}
   public folder = 'Проект разработан группой РИЗ-330916у'
-  public user = this.src.fio
+  public user = ''
+  ngOnInit(){
+    this.getName();
+  }
   to_users(){
     this.router.navigate(['/users'])
   }
@@ -32,5 +35,6 @@ export class HeaderComponent {
     let cookie = {} as any
     cookie = this.src.getCookie('username')
     this.user = cookie.username
+    this.src.fio = this.user
   }
 }
