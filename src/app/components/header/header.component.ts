@@ -20,7 +20,8 @@ export class HeaderComponent {
     this.getName();
   }
   to_users(){
-    this.router.navigate(['/users'])
+    alert("У вас нет доступа к просмотру сотрудников")
+    // this.router.navigate(['/users'])
   }
   to_activites(){
     this.router.navigate(['/active-list'])
