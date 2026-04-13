@@ -24,10 +24,10 @@ export class DataService {
     })
     result = await response.json();
     //Установка кук, если их передал сервер
-    let cookie = response.headers.get('Set-cookie')?.toString();
-    if (cookie!= undefined){
-      document.cookie = cookie;
-    }
+    // let cookie = response.headers.get('Set-cookie')?.toString();
+    // if (cookie!= undefined){
+    //   document.cookie = cookie;
+    // }
     return result
   }
 

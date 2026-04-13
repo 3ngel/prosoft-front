@@ -24,7 +24,7 @@ export class LoginComponent {
     if(username){
       this.router.navigate(['/active-list'])
     }
-    
+    console.log(document.cookie)
   }
 
   //Метод авторизации
@@ -41,7 +41,7 @@ export class LoginComponent {
     let result:any = await this.src.send_message_post("/user_verify", body)
     if (result.user){
       this.src.authorized=true
-      console.log(result.user)
+      console.log(result.user)      
       this.router.navigate(['/active-list'])
     }
     else{
