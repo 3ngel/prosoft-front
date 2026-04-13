@@ -21,10 +21,10 @@ export class ActiveListComponent {
     // if (this.src.authorized==false){
     //   this.router.navigate(['/login'])
     // }
-    this.src.authorized=true
     let username=this.src.getCookie("username")
-    console.log(username)
+    console.log("Страница автивов "+username)
     if(!username){
+      this.src.authorized=true
       this.router.navigate(['/login'])
     }
     this.getAllTypeObjects();
