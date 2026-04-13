@@ -22,7 +22,11 @@ export class LoginComponent {
     let username=this.src.getCookie("username")
     console.log(username)
     if(username){
+      this.src.authorized=true;
       this.router.navigate(['/active-list'])
+    }
+    else{
+      this.src.authorized=false
     }
     console.log(document.cookie)
   }

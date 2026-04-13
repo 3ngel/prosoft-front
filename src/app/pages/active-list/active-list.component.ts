@@ -24,7 +24,7 @@ export class ActiveListComponent {
     let username=this.src.getCookie("username")
     console.log("Страница автивов "+username)
     if(!username){
-      this.src.authorized=true
+      this.src.authorized=false
       this.router.navigate(['/login'])
     }
     this.getAllTypeObjects();
