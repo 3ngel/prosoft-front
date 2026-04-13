@@ -27,8 +27,11 @@ export class HeaderComponent {
   }
   exit(){
     this.src.authorized=false
-    this.src.removeCookie("username", {});
-    this.src.removeCookie("user_id", {});
+    let atributes = {
+      path: '/'
+    }
+    this.src.removeCookie("username", atributes);
+    this.src.removeCookie("user_id", atributes);
     this.router.navigate(['/login'])
   }
   getName(){
