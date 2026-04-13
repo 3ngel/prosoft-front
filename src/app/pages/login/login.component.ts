@@ -20,7 +20,8 @@ export class LoginComponent {
   ngOnInit(){
     //Проверяем авторизован ли пользователь, если авторизован, то переводим в авторизованную зону
     let username=this.src.getCookie("username")
-    if(username!=undefined){
+    console.log(username)
+    if(username){
       this.router.navigate(['/active-list'])
     }
     
@@ -38,7 +39,6 @@ export class LoginComponent {
     }
     //Запрос авторизации пользователя
     let result:any = await this.src.send_message_post("/user_verify", body)
-    console.log(result)
     if (result.user){
       this.src.authorized=true
       this.src.fio = result.user
