@@ -1,0 +1,35 @@
+<div class="info">
+    <div class="table">
+        <!-- <div class="head"> -->
+            <p>Название </p>
+            <input type="text" [(ngModel)]="name" id="">
+            <p>Вид актива</p>
+            <select (selectionchange)="changedTypeObject($event)" name="kind" id="">
+                <option value="1">[Выберите вид]</option>
+                <option [value]="item" *ngFor="let item of type_objects">{{item}}</option>
+            </select>
+            <p>Статус актива</p>
+            <select (selectionchange)="changedStatus($event)"  name="status" id="">
+                <option value="1">[Выберите статус]</option>
+                <option [value]="item" *ngFor="let item of statuses">{{item}}</option>
+            </select>
+            <p>Инвертарный номер</p>
+            <input type="text" [(ngModel)]="inventory_number" id="">
+            <p>Серийный номер</p>
+            <input type="text" [(ngModel)]="serial_number" id="">
+            <p>Описание </p>
+            <input type="text" [(ngModel)]="description" id="">
+            <p>Место нахождение</p>
+            <input type="text" [(ngModel)]="address" id="">
+            <p>Владелец</p>
+            <p>{{owner}}</p>
+            <button>Сохранить актив</button>
+            <!-- <button>Сортировка</button>
+            <button>Фильтрация</button>
+            <button>Просмотреть архив</button>
+            <button (click)="reload_list()">Обновить список</button> -->
+
+        <!-- </div> -->
+        
+    </div>
+</div>

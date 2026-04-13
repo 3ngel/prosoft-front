@@ -4,6 +4,7 @@ import { ActiveComponent } from './pages/active/active.component';
 import { ActiveListComponent } from './pages/active-list/active-list.component';
 import { UserBrowseComponent } from './pages/user-browse/user-browse.component';
 import { UsersComponent } from './pages/users/users.component';
+import { AddActiveComponent } from './pages/add-active/add-active.component';
 
 export const routes: Routes = [
     {path: 'login', component: LoginComponent},
@@ -11,5 +12,6 @@ export const routes: Routes = [
     {path:'active', component:ActiveComponent},
     {path:'active-list', component:ActiveListComponent},
     {path:'user-browse/:name', component: UserBrowseComponent},
-    {path:'users', component: UsersComponent}
+    {path:'users', component: UsersComponent},
+    {path:'add-active', component: AddActiveComponent}
 ];

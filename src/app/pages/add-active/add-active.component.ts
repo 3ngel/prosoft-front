@@ -1,0 +1,75 @@
+import { Component } from '@angular/core';
+import { DataService } from '../../services/data.service';
+import { Router } from '@angular/router';
+import { Active } from '../../services/templates';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-add-active',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './add-active.component.html',
+  styleUrl: './add-active.component.scss'
+})
+export class AddActiveComponent {
+  public activites_list = [{} as Active]
+  type_objects = []
+  statuses = []
+  public type =''
+  public name = ''
+  public status = ''
+  public inventory_number = ''
+  public serial_number = ''
+  public description =''
+  public address = ''
+  public owner = ''
+  constructor(public src:DataService, public router: Router){}
+  async ngOnInit(){
+    // if (this.src.authorized==false){
+    //   this.router.navigate(['/login'])
+    // }
+    // let username=this.src.getCookie("username")
+    // if(!username){
+    //   this.src.authorized=false
+    //   this.router.navigate(['/login'])
+    // }
+    // else{
+    //    this.src.authorized=true
+    // }
+    this.getAllTypeObjects();
+    let user = this.src.getCookie("username")
+    
+    //Получение списка всех активов
+    this.reload_list();
+
+  }
+  async getAllTypeObjects(){
+    let result = {} as any;
+    result = await this.src.send_message_get("/get_all_type_object")
+    this.type_objects = result.type_object
+  }
+  async getAllStatus(type:string){
+    let body ={
+      type_object: type
+    }
+    let result = {} as any;
+    result = await this.src.send_message_post("/get_all_status", body)
+    this.statuses = result.status
+  }
+
+  //Обновление списка
+  async reload_list(){
+    let result = {} as any;
+    result = await this.src.send_message_get("/get_all_activites")
+    this.activites_list = result.activites;
+  }
+  changedTypeObject(newValue:Event){
+    this.type = (newValue.target as HTMLTextAreaElement).value
+    this.getAllStatus(this.type)
+    return
+  }
+  changedStatus(newValue:Event){
+    this.status = (newValue.target as HTMLTextAreaElement).value;
+    return
+  }
+} 
