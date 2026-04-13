@@ -17,9 +17,13 @@ export class ActiveComponent {
     //ПЕРЕДЕЛАТЬ МЕТОД НА ПОСТ
     async ngOnInit(){
       let username=this.src.getCookie("username")
-      if(username==undefined){
-        this.router.navigate(['/login'])
-      }
+    if(!username){
+      this.src.authorized=false
+      this.router.navigate(['/login'])
+    }
+    else{
+       this.src.authorized=true
+    }
       //Получение списка всех активов
       this.activites_list = this.src.send_message_get("/get_all_activites")
     }
