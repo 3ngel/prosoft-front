@@ -16,9 +16,7 @@ export class ActiveComponent {
     
     //ПЕРЕДЕЛАТЬ МЕТОД НА ПОСТ
     async ngOnInit(){
-      if (this.src.authorized==false){
-        this.router.navigate(['/login'])
-      }
+      this.src.authorized=true
       let username=this.src.getCookie("username")
       if(username==undefined){
         this.router.navigate(['/login'])

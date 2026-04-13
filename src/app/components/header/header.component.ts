@@ -29,7 +29,7 @@ export class HeaderComponent {
   exit(){
     this.src.authorized=false
     this.src.removeCookie("username", {});
-    this.src.removeCookie("user_id", {})
+    this.src.removeCookie("user_id", {});
     this.router.navigate(['/login'])
   }
   getName(){
@@ -37,5 +37,6 @@ export class HeaderComponent {
     cookie = this.src.getCookie('username')
     this.user = cookie.username
     this.src.fio = this.user
+    console.log(this.user)
   }
 }

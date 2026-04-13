@@ -19,9 +19,6 @@ export class LoginComponent {
   
   ngOnInit(){
     //Проверяем авторизован ли пользователь, если авторизован, то переводим в авторизованную зону
-    if (this.src.authorized==true){
-      this.router.navigate(['/active-list'])
-    }
     let username=this.src.getCookie("username")
     if(username!=undefined){
       this.router.navigate(['/active-list'])

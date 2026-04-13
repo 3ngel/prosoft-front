@@ -49,42 +49,42 @@ export class UserBrowseComponent {
   }
   
   reload_list(){
-    // let body = {
-    //   owner:this.name
-    // }
-    // let response:any
-    // response = this.src.send_message_post('/user_browse', body)
-    let response = {
-      "assets": [
-        {
-            "date_create": "2025-12-06 09:02:04",
-            "inventory_number": "INV-0001",
-            "name": "Монитор Samsung 24\"",
-            "owner": "Иванов Иван Иванович",
-            "serial_number": "SN-MON-001",
-            "status": "Используется",
-            "type_object": "Монитор"
-        },
-        {
-            "date_create": "2025-12-06 09:02:04",
-            "inventory_number": "INV-0002",
-            "name": "Материнская плата ASUS",
-            "owner": "Иванов Иван Иванович",
-            "serial_number": "SN-MB-001",
-            "status": "На складе",
-            "type_object": "Материнская плата"
-        },
-        {
-            "date_create": "2025-12-06 09:02:09",
-            "inventory_number": "INV-1000",
-            "name": "Принтер HP",
-            "owner": "Иванов Иван Иванович",
-            "serial_number": "SN-PRN-1000",
-            "status": "Используется",
-            "type_object": "Монитор"
-        }
-    ]
+    let body = {
+      owner:this.name
     }
+    let response:any
+    response = this.src.send_message_post('/user_browse', body)
+    // let response = {
+    //   "assets": [
+    //     {
+    //         "date_create": "2025-12-06 09:02:04",
+    //         "inventory_number": "INV-0001",
+    //         "name": "Монитор Samsung 24\"",
+    //         "owner": "Иванов Иван Иванович",
+    //         "serial_number": "SN-MON-001",
+    //         "status": "Используется",
+    //         "type_object": "Монитор"
+    //     },
+    //     {
+    //         "date_create": "2025-12-06 09:02:04",
+    //         "inventory_number": "INV-0002",
+    //         "name": "Материнская плата ASUS",
+    //         "owner": "Иванов Иван Иванович",
+    //         "serial_number": "SN-MB-001",
+    //         "status": "На складе",
+    //         "type_object": "Материнская плата"
+    //     },
+    //     {
+    //         "date_create": "2025-12-06 09:02:09",
+    //         "inventory_number": "INV-1000",
+    //         "name": "Принтер HP",
+    //         "owner": "Иванов Иван Иванович",
+    //         "serial_number": "SN-PRN-1000",
+    //         "status": "Используется",
+    //         "type_object": "Монитор"
+    //     }
+    // ]
+    // }
     this.activites = response.assets
   }
 
