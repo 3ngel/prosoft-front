@@ -3,11 +3,12 @@ import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
 import { Active } from '../../services/templates';
 import { FormsModule } from '@angular/forms';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-add-active',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgForOf],
   templateUrl: './add-active.component.html',
   styleUrl: './add-active.component.scss'
 })
