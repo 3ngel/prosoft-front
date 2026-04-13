@@ -36,7 +36,6 @@ export class DataService {
     let result:any;
     const myHeaders = new Headers();
     let cookie = document.cookie
-    console.log(cookie)
     myHeaders.append("Cookie", cookie)
     myHeaders.append("Content-Type", "application/json")
     let response = await fetch(this.api_url+path,{

@@ -23,9 +23,13 @@ export class ActiveListComponent {
     // }
     let username=this.src.getCookie("username")
     console.log("Страница автивов "+username)
+    console.log(this.src.authorized)
     if(!username){
       this.src.authorized=false
       this.router.navigate(['/login'])
+    }
+    else{
+       this.src.authorized=true
     }
     this.getAllTypeObjects();
     //Получение списка всех активов
