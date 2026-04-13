@@ -22,7 +22,7 @@ export class AddActiveComponent {
   public serial_number = ''
   public description =''
   public address = ''
-  public owner = ''
+  public owner = 'Панфилова Ангелина Олеговна'
   constructor(public src:DataService, public router: Router){}
   async ngOnInit(){
     // if (this.src.authorized==false){
@@ -38,6 +38,7 @@ export class AddActiveComponent {
     // }
     this.getAllTypeObjects();
     let user = this.src.getCookie("username")
+    this.owner = user.username || 'Панфилова Ангелина Олеговна'
     
     //Получение списка всех активов
     this.reload_list();
