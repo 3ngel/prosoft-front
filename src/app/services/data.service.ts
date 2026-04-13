@@ -113,6 +113,7 @@ export class DataService {
   removeCookie(name:string, attributes:any){
     attributes = attributes || {};
     attributes.expires = new Date(0).toUTCString();
+    console.log("Удаляю куку "+name);
     this.setCookie(name, "", undefined, attributes);
   };
 

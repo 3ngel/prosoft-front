@@ -36,7 +36,6 @@ export class ActiveListComponent {
     let result = {} as any;
     result = await this.src.send_message_get("/get_all_type_object")
     this.type_objects = result.type_object
-    console.log(this.type_objects)
   }
 
   //Обновление списка
@@ -75,7 +74,6 @@ export class ActiveListComponent {
       // ]
     // }
     this.activites_list = result.activites;
-    console.log(this.activites_list)
   }
   viewActive(name:string){
     return
