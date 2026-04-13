@@ -20,9 +20,6 @@ export class UserBrowseComponent {
     this.subscription = this.acroute.params.subscribe(params=>this.name=params['name'])
   }
   ngOnInit(){
-    if (this.src.authorized==false){
-      this.router.navigate(['/login'])
-    }
     let username=this.src.getCookie("username")
     if(!username){
       this.src.authorized=false
@@ -52,12 +49,12 @@ export class UserBrowseComponent {
     return alert("Не работает")
   }
   
-  reload_list(){
+  async reload_list(){
     let body = {
       owner:this.name
     }
     let response:any
-    response = this.src.send_message_post('/user_browse', body)
+    response = await this.src.send_message_post('/user_browse', body)
     this.activites = response.assets
     console.log(this.activites)
   }
