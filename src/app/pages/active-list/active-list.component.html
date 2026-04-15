@@ -1,7 +1,7 @@
 <div class="info">
           <div class="table">
             <div class="head">
-              <select name="kind" id="">
+              <select name="kind" id="" [(ngModel)]="filter" (change)="activeFilter()">
                 <option value="none">[Выберите вид]</option>
                 <option [value]="item" *ngFor="let item of type_objects">{{item}}</option>
               </select>

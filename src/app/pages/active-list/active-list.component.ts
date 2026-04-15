@@ -15,6 +15,8 @@ import { FormsModule } from "@angular/forms";
 export class ActiveListComponent {
 
   public activites_list = [{} as Active]
+  public activites_list_full = [{} as Active]
+  public filter = ''
   type_objects = []
   constructor(public src:DataService, public router: Router){}
   async ngOnInit(){
@@ -43,8 +45,12 @@ export class ActiveListComponent {
   //Обновление списка
   async reload_list(){
     let result = {} as any;
-    result = await this.src.send_message_get("/get_all_activites")
+    result = await this.src.send_message_get("/get_all_activites")    
     this.activites_list = result.activites;
+    this.activites_list_full = this.activites_list
+  }
+  activeFilter(){
+    this.activites_list = this.activites_list_full.filter(active=>active.type_object.toLowerCase().includes(this.filter.toLowerCase()))
   }
   viewActive(name:string){
     return
