@@ -29,14 +29,14 @@ export class AddActiveComponent {
     // if (this.src.authorized==false){
     //   this.router.navigate(['/login'])
     // }
-    // let username=this.src.getCookie("username")
-    // if(!username){
-    //   this.src.authorized=false
-    //   this.router.navigate(['/login'])
-    // }
-    // else{
-    //    this.src.authorized=true
-    // }
+    let username=this.src.getCookie("username")
+    if(!username){
+      this.src.authorized=false
+      this.router.navigate(['/login'])
+    }
+    else{
+       this.src.authorized=true
+    }
     this.getAllTypeObjects();
     let user = this.src.getCookie("username")
     this.owner = user.username || 'Панфилова Ангелина Олеговна'
