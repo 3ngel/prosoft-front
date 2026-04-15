@@ -53,4 +53,8 @@ export class ActiveListComponent {
     this.router.navigate(['/user-browse', name])
     return
   }
+  addActive(){
+    this.router.navigate(['/add-active'])
+    return
+  }
 }

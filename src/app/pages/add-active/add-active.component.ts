@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
-import { Active } from '../../services/templates';
+import { Active, Add_Active } from '../../services/templates';
 import { FormsModule } from '@angular/forms';
 import { NgForOf } from '@angular/common';
 
@@ -66,12 +66,34 @@ export class AddActiveComponent {
     this.activites_list = result.activites;
   }
   changedTypeObject(newValue:Event){
+    console.log("Тык смены типа")
     this.type = (newValue.target as HTMLTextAreaElement).value
     this.getAllStatus(this.type)
     return
   }
   changedStatus(newValue:Event){
+    console.log("Тык смены типа")
     this.status = (newValue.target as HTMLTextAreaElement).value;
     return
+  }
+  async addActive(){
+    let body = {} as Add_Active
+    body.name = this.name
+    body.status = this.status
+    body.address = this.address
+    body.description = this.description
+    body.owner = this.owner
+    body.inventory_number = this.inventory_number
+    body.serial_number = this.serial_number
+    body.type_object = this.type
+    let result = {} as any
+    result = await this.src.send_message_post("/add_active", body)
+    if (result.error){
+      alert(result.error)
+    }
+    else{      
+      this.router.navigate(['/active-list'])
+    }
+
   }
 } 
