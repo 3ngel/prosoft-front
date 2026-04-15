@@ -75,18 +75,23 @@ export class AddActiveComponent {
     return
   }
   async addActive(){
+    console.log("Тык добавления актива")
     let body = {} as Add_Active
-    body.name = this.name
-    body.status = this.status
-    body.address = this.address
-    body.description = this.description
-    body.owner = this.owner
-    body.inventory_number = this.inventory_number
-    body.serial_number = this.serial_number
-    body.type_object = this.type
+    body = {
+      name:this.name,
+      status: this.status,
+      address: this.address,
+      description: this.description,
+      owner: this.owner,
+      inventory_number: this.inventory_number,
+      serial_number: this.serial_number,
+      type_object: this.type
+    }
+    
     let result = {} as any
     result = await this.src.send_message_post("/add_active", body)
-    if (result.error){
+    //Проверяем есть ли ошибка
+    if (result?.error){
       alert(result.error)
     }
     else{      
