@@ -4,13 +4,13 @@
             <p>Название </p>
             <input type="text" [(ngModel)]="name" id="">
             <p>Вид актива</p>
-            <select (selectionchange)="changedTypeObject($event)" name="kind" id="">
-                <option value="1">[Выберите вид]</option>
+            <select (change)="changedTypeObject()" name="kind" id="" [(ngModel)]="type">
+                <option value="none">[Выберите вид]</option>
                 <option [value]="item" *ngFor="let item of type_objects">{{item}}</option>
             </select>
             <p>Статус актива</p>
-            <select (selectionchange)="changedStatus($event)"  name="status" id="">
-                <option value="1">[Выберите статус]</option>
+            <select (change)="changedStatus()" [(ngModel)]="status" name="status" id="">
+                <option value="none">[Выберите статус]</option>
                 <option [value]="item" *ngFor="let item of statuses">{{item}}</option>
             </select>
             <p>Инвертарный номер</p>

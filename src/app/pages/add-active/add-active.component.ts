@@ -65,15 +65,13 @@ export class AddActiveComponent {
     result = await this.src.send_message_get("/get_all_activites")
     this.activites_list = result.activites;
   }
-  changedTypeObject(newValue:Event){
+  changedTypeObject(){
     console.log("Тык смены типа")
-    this.type = (newValue.target as HTMLTextAreaElement).value
     this.getAllStatus(this.type)
     return
   }
-  changedStatus(newValue:Event){
+  changedStatus(){
     console.log("Тык смены типа")
-    this.status = (newValue.target as HTMLTextAreaElement).value;
     return
   }
   async addActive(){
